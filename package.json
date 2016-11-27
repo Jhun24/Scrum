@@ -1,0 +1,26 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jhun24/NodeTest.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "test",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jhun24/NodeTest/issues"
+  },
+  "homepage": "https://github.com/Jhun24/NodeTest#readme",
+  "dependencies": {
+    "mongodb": "^1.4.19",
+    "mongoose": "^4.6.8"
+  }
+}

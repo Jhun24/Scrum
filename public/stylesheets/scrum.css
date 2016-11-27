@@ -1,0 +1,200 @@
+*{
+  margin:0px;
+  font-family: 'Ubuntu', sans-serif;
+  overflow:hidden;
+}
+
+/* header css */
+.scrumHeader{
+  width:100vw;
+  height:10vh;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+
+.scrumLogout{
+  width:10vw;
+  height:5vh;
+  margin-right:1vw;
+  color:#7D8ACD;
+  cursor:pointer;
+  border:0.2vw solid #7D8ACD;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:3vh;
+  border-radius:15px;
+  user-select: none;
+}
+
+.scrumLogout:hover{
+  background-color:#7D8ACD;
+  color:white;
+}
+/* header css finish */
+
+/* body css */
+.scrumBody{
+
+  width:100vw;
+  height:90vh;
+
+}
+
+.scrumFlex{
+  display:flex;
+  width:100vw;
+  height:90vh;
+}
+
+.scrumBox{
+  width:33.3vw;
+  height:90vh;
+  border-left:0.1vw solid gray;
+  border-top:0.1vw solid gray;
+  border-right-color:0.1vw solid gray;
+}
+
+.todo{
+  width:33.3vw;
+  height:10vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#7D8ACD;
+}
+
+.doing{
+  width:33.3vw;
+  height:10vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#7D8ACD;
+}
+
+.done{
+  width:33.3vw;
+  height:10vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#7D8ACD;
+}
+
+.todoBox{
+  width:33.3vw;
+  height:70vh;
+  overflow-y:auto;
+  display:inline-block;
+}
+.addScrum{
+  width:33.3vw;
+  height:10vh;
+  border-top:0.1vw solid #C0C0C0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.addBtn{
+    width:10vw;
+    height:6vh;
+    border:0.1vw solid #7D8ACD;
+    border-radius:40px;
+    cursor:pointer;
+    font-size:3vh;
+    color:#7D8ACD;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    user-select: none;
+}
+
+.addBtn:hover{
+  background-color:#7D8ACD;
+  color:white;
+}
+
+.doingBox{
+  width:33.3vw;
+  height:90vh;
+  overflow-y:auto;
+}
+
+.doneBox{
+  width:33.3vw;
+  height:90vh;
+  overflow-y:auto;
+}
+/* body css finish */
+
+/* scrum css */
+
+.scrum{
+  width:30vw;
+  height:25vh;
+  margin:auto;
+  padding-top:2vh;
+  margin-top:2vh;
+  background-color:#7D91D2;
+}
+
+.scrum:hover{
+  border:0.15vw solid #FF6F00;
+}
+
+.scrumContentHeader{
+  width:30vw;
+  height:6vh;
+  color:white;
+  padding-left:1vw;
+}
+
+.scrumContentDate{
+  width:30vw;
+  height:3vh;
+  padding-left:1vw;
+  color:rgba(255,255,255,0.6);
+  font-size:2vh;
+}
+
+.scrumContentContent{
+  width:30vw;
+  height:10vh;
+  padding-left:1vw;
+  color:white;
+}
+
+.scrumContentBtn{
+  width:30vw;
+  height:6vh;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+.memoBtn{
+  margin-right:1vw;
+  width:5vw;
+  height:4vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;;
+  color:white;
+  border:0.1vw solid white;
+  border-radius:15px;
+  cursor:pointer;
+  user-select: none;
+}
+
+.memoBtn:hover{
+  background-color:white;
+  color:#7D91D2;
+}
+
+.hover{
+  border:0.15vw solid #FF6F00;
+}
+
+/* scrum css finish*/

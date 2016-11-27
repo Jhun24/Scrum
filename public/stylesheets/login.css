@@ -1,0 +1,92 @@
+*{
+  margin:0px;
+  font-family: 'Roboto', sans-serif;
+  user-select:none;
+}
+
+body{
+  width:100vw;
+  height:100vh;
+  background-image:url('../images/background.jpg');
+  background-size:auto;
+}
+
+.opacity{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background-color:rgba(0,0,0,0.5);
+}
+
+.login{
+  width:20vw;
+  height:30vh;
+  display:inline-block;
+}
+
+.loginBox{
+  width:20vw;
+  height:6vh;
+  background-color:rgba(255,255,255,0);
+  border:0.2vw solid white;
+  padding-left:1vw;
+  font-size:3vh;
+  margin-top:2vh;
+  color:white;
+  outline:none;
+}
+
+.btn{
+  width:20vw;
+  height:6vh;
+  background-color:rgba(255,255,255,0);
+  border:0.2vw solid white;
+  font-size:3vh;
+  margin-top:3vh;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  outline:none;
+}
+
+.btn:hover{
+
+  border:0.2vw solid #FF9100;
+  color:#FF9100;
+}
+
+h1{
+  text-align:center;
+  font-size:6vh;
+  color:#fff;
+  cursor:pointer;
+}
+
+::-webkit-input-placeholder {
+    color:#fff;
+}
+:-moz-placeholder {
+    color:#fff;
+}
+::-moz-placeholder {
+    color:#fff;
+}
+:-ms-input-placeholder {
+    color:#fff;
+}
+
+.register{
+  text-align:center;
+  color:white;
+  cursor:pointer;
+  font-size:2.4vh;
+  display:flex;
+  justify-content:center;
+  padding-top:1vh;
+  text-decoration:none;
+}

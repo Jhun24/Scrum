@@ -1,0 +1,99 @@
+*{
+  margin:0px;
+  font-family: 'Roboto', sans-serif;
+  user-select:none;
+}
+.title{
+  color:white;
+  text-align:center;
+}
+body{
+  width:100vw;
+  height:100vh;
+
+  background-image:url('../images/background.jpg');
+  background-size:auto;
+}
+.flex{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color:rgba(0,0,0,0.5);
+}
+
+.scrumBox{
+  width:30vw;
+  height:35vh;
+  display:inline-block;
+}
+
+.scrum{
+  width:30vw;
+  height:25vh;
+  margin:auto;
+  padding-top:2vh;
+  margin-top:2vh;
+  background-color:#7D91D2;
+}
+
+.scrumContentHeader{
+  width:30vw;
+  height:6vh;
+  color:white;
+  padding-left:1vw;
+}
+
+.scrumContentDate{
+  width:30vw;
+  height:5vh;
+  padding-left:1vw;
+  color:rgba(255,255,255,0.6);
+  font-size:2vh;
+}
+
+.scrumContentContent{
+  margin-top:1vh;
+  width:30vw;
+  height:7vh;
+  padding-left:1vw;
+  color:white;
+}
+
+.scrumContentBtn{
+  width:30vw;
+  height:6vh;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+.memoBtn{
+  margin-right:1vw;
+  width:5vw;
+  height:4vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;;
+  color:white;
+  border:0.1vw solid white;
+  border-radius:15px;
+  cursor:pointer;
+  user-select: none;
+}
+
+.memoBtn:hover{
+  background-color:white;
+  color:#7D91D2;
+}
+
+.box{
+  width:20vw;
+  height:4vh;
+  background-color:rgba(0,0,0,0.3);
+  border:none;
+  outline:none;
+  font-size:2vh;
+  color:white;
+  padding-left:1vw;
+}

@@ -72,17 +72,17 @@ app.use(function (req, res, next) {
 app.post('/changeSetPlace',function(req, res){
 	var check = req.body.check;
 	var value = req.body.value;
-	console.log(check+"+"+value)
-	scrumModel.find({"setNum":check},function(err,models){
-		console.log(models)
-	})
-	scrumModel.update({"setNum":check},{$set:{"setPlace":value}},function(err, models){
+	console.log(check+"-----------"+value)
+	scrumModel.update({"setNum":check,"id":req.session.userId},{$set:{"setPlace":value}},function(err, models){
 		if(err){
 			console.error(err);
 		}
-		console.log(models);
+		console.log("change SetPlace");
 	});
 
+	scrumModel.find({"setNum":check},function(err,models){
+		console.log(models)
+	});
 
 	res.send("0");
 
@@ -118,7 +118,7 @@ app.post('/sessionIdCheck',function(req, res){
 
 app.post('/addScrum',function(req, res){
 	var id = req.session.userId;
-	console.log(id);
+
 	var header = req.body.header;
 	var date = req.body.date;
 	var content = req.body.content;
@@ -160,6 +160,12 @@ app.post('/login',function(req, res){
 	});
 });
 
+app.post('/logout',function(req,res){
+	req.session.userId = null
+
+	res.send("1");
+});
+
 app.post('/addId',function(req, res){
   var id = req.body.id;
   var ps = req.body.ps;
@@ -172,7 +178,7 @@ app.post('/addId',function(req, res){
 		}
 		if(model == ''){
 			regi.save(function(err,models){
-				console.log(models)
+
 				if(err){
 					return console.error(err);
 				}
@@ -180,7 +186,7 @@ app.post('/addId',function(req, res){
 					req.session.userId = id;
 					res.send("0");
 				}
-				console.log(models)
+
 			});
 		}
 		else{

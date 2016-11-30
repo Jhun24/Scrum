@@ -11,7 +11,7 @@ $(function(){
 
 
      drop:function(event,ui){
-       console.log(check)
+
        var inter = ui;
        $.ajax({
          method:"POST",
@@ -38,9 +38,6 @@ $(function(){
 
 
       drop:function(event, ui){
-
-        $(this).append($(ui.draggable));
-
 
         var inter = ui;
         $.ajax({
@@ -219,6 +216,22 @@ $(function(){
         }
       });
     }
+
+    $(".scrumLogout").click(function(){
+      $.ajax({
+        method:"POST",
+        url:"http://localhost:3000/logout",
+        success:function(data){
+          if(data == "1"){
+            window.location = "login.html"
+          }
+        },
+        error:function(){
+          alert("server Error 500")
+        }
+      });
+    });
+
 
 
 });

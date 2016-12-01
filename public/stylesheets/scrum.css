@@ -188,6 +188,18 @@
   user-select: none;
 }
 
+.BtnBox{
+  height:5vh;
+  width:6vw;
+  display:flex;
+  align-items:center;
+  justify-content:center;;
+
+  cursor:pointer;
+  user-select: none;
+}
+
+
 .memoBtn:hover{
   background-color:white;
   color:#7D91D2;

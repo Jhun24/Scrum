@@ -40,9 +40,9 @@ var userModel =mongoose.model('userModel',user);
 // });
 
 var scrumModel = mongoose.model('scrumModel',sc);
-// scrumModel.find({"header":"1","content":"1"},function(err,models){
-//   console.log(models)
-// })
+scrumModel.find({"id":"7"},function(err,models){
+  console.log(models)
+})
 
 app.set('view engine', 'html')
 app.set('views', 'views')
@@ -67,6 +67,52 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     // Pass to next layer of middleware
     next();
+});
+
+app.post('/returnFixScrum',function(req,res){
+	var id = req.session.userId
+	var setNum = req.session.userFixSetNum
+
+	var header = req.body.header
+	var date = req.body.date
+	var content = req.body.content
+
+
+	scrumModel.update({"id":id,"setNum":setNum},{$set:{"header":header,"date":date,"content":content}},function(err, models){
+		if(err){
+			return console.error(err)
+		}
+		if(models != ''){
+			res.send("0")
+		}
+		else{
+			res.send("1")
+		}
+	})
+});
+
+app.post('/fixSetValue',function(req,res){
+	var setNum = req.session.userFixSetNum
+	var id = req.session.userId
+	console.log(setNum)
+	scrumModel.find({"id":id,"setNum":setNum},function(err,models){
+		if(err){
+			return console.error(err)
+		}
+
+		if(models != null){
+			res.send(models)
+		}
+		else{
+			res.send("1")
+		}
+	});
+});
+
+app.post('/scrumFix',function(req,res){
+	req.session.userFixSetNum = req.body.setNum
+
+	res.send("0")
 });
 
 app.post('/changeSetPlace',function(req, res){
@@ -96,16 +142,17 @@ app.post('/scrumList',function(req,res){
 		}
 		if(models != ''){
 			res.send(models)
+			console.log(models)
 		}
 		else{
-			res.send("1")
+			res.send("a")
 		}
 	});
 });
 
 app.post('/sessionIdCheck',function(req, res){
 	var id = req.session.userId;
-
+	console.log(id)
 	if(id != null){
 
 		req.session.userId = id;
@@ -131,6 +178,7 @@ app.post('/addScrum',function(req, res){
 			return console.error(err)
 		}
 		if(models != ''){
+			req.session.userId = id;
 			res.send("0")
 		}
 		else{
@@ -211,6 +259,10 @@ app.get("/scrumAdd",function(req, res){
 	res.render("scrumAdd.html")
 
 });
+
+app.get('/fix',function(req,res){
+	res.render('scrumfix.html')
+})
 
 app.listen(3000,function(){
   console.log("Port 3000 Connection");

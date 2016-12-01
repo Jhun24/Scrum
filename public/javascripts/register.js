@@ -20,7 +20,7 @@ $(function(){
       data:{"id":id,"ps":ps,"name":name},
       success:function(data){
         if(data == "0"){
-          window.location = "http://localhost:3000/scrum";
+          window.location = "http://localhost:3000";
         }
         else{
           alert("존재하는 아이디 입니다")

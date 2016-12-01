@@ -142,11 +142,14 @@ $(function(){
                     scrum += "</div>"
 
                     scrum += "<div class=\"scrumContentBtn\">"
-                    scrum += "<div class=\"memoBtn\">"
+                    scrum += "<div class=\"BtnBox\">"
+                    scrum += "<div id=\""+list[i]["setNum"]+"\" class=\"memoBtn\">"
                     scrum += "Change"
                     scrum += "</div>"
                     scrum += "</div>"
                     scrum += "</div>"
+                    scrum += "</div>"
+
 
                     if(list[i]["setPlace"] == "todo"){
                       $(".todoBox").append(scrum);
@@ -202,6 +205,25 @@ $(function(){
                      });
                     }
                   }
+
+                  $(".BtnBox").click(function memoClick(){
+                    var txt = $(this).html()
+                    var data = txt.split("id=\"")
+                    var setNum = data[1].split("\"")
+                    console.log(setNum[0])
+
+                    $.ajax({
+                      method:"POST",
+                      url:"http://localhost:3000/scrumFix",
+                      data:{"setNum":setNum[0]},
+                      success:function(data){
+                          if(data == "0"){
+                            window.location = "http://localhost:3000/fix"
+                          }
+                      }
+                    })
+                  });
+
                 }
 
               },
@@ -214,7 +236,9 @@ $(function(){
         error:function(){
 
         }
+
       });
+
     }
 
     $(".scrumLogout").click(function(){
@@ -231,6 +255,7 @@ $(function(){
         }
       });
     });
+
 
 
 
